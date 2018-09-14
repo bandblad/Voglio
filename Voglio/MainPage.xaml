@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:Voglio" 
+    x:Class="Voglio.MainPage"
+    x:Name="contentPage">
+    
+    <StackLayout
+        BackgroundColor="Red"
+        Padding="0,40">
+        
+        <StackLayout.Resources>
+            <Style 
+                TargetType="Label">
+                
+                <Setter
+                    Property="Font"
+                    Value="21"/>
+                
+                <Setter
+                    Property="TextColor"
+                    Value="White"/>
+                
+            </Style>
+        </StackLayout.Resources>
+        
+        <Picker 
+            x:Name="establishmentPicker"
+            IsVisible="false">
+            
+            <Picker.Items>
+                <x:String>любом заведении</x:String>
+                <x:String>ресторане</x:String>
+                <x:String>кафе</x:String>
+            </Picker.Items>
+            <Picker.SelectedIndex>
+                0
+            </Picker.SelectedIndex>
+        </Picker>
+        
+        <Picker 
+            x:Name="cuisinePicker"
+            IsVisible="false">
+            
+            <Picker.Items>
+                <x:String>любой</x:String>
+                <x:String>японской</x:String>
+                <x:String>китайской</x:String>
+                <x:String>европейской</x:String>
+                <x:String>итальянской</x:String>
+                <x:String>французской</x:String>
+            </Picker.Items>
+            <Picker.SelectedIndex>
+                0
+            </Picker.SelectedIndex>
+        </Picker>
+        
+        <TimePicker
+            x:Name="timePicker"
+            IsVisible="false"/>
+        
+        <Label
+            Text="Voglio"
+            Font="30"
+            FontAttributes="Bold"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+        
+        <StackLayout 
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand">
+            
+            <StackLayout 
+                Margin="0,4"
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand">
+            
+                <Label 
+                    Text="Я хочу поесть в"/>
+                
+                <Label 
+                    x:Name="establishmentLabel"
+                    Text="{Binding Source={x:Reference establishmentPicker}, Path=SelectedItem}"/>
+                
+            </StackLayout>
+        
+            <StackLayout 
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand">
+                
+                <Label 
+                    x:Name="cuisineLabel"
+                    Text="{Binding Source={x:Reference cuisinePicker}, Path=SelectedItem}"/>
+                
+                <Label 
+                    Text="кухни"/>
+                
+                <Label 
+                    x:Name="timeLabel"
+                    IsEnabled="false"
+                    IsVisible="false"
+                    Text="{Binding Source={x:Reference timePicker}, Path=Time}"/>
+                
+            </StackLayout>
+            
+            <Button
+                x:Name="goButton"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="150"
+                Margin="20"
+                BackgroundColor="White"
+                BorderRadius="25"
+                TextColor="Red"
+                Text="ВПЕРЕД"/>
+            
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
