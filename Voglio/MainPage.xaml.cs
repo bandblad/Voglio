@@ -27,16 +27,36 @@ namespace Voglio
                 })
             };
 
-            var tapTime = new TapGestureRecognizer()
-            {
-                Command = new Command(() => {
-                    timePicker.Focus();
-                })
-            };
+            establishmentLabel
+                .GestureRecognizers
+                .Add(tapEstablishment);
 
-            establishmentLabel.GestureRecognizers.Add(tapEstablishment);
-            cuisineLabel.GestureRecognizers.Add(tapCuisine);
-            timeLabel.GestureRecognizers.Add(tapTime);
+            establishmentSplit
+                .GestureRecognizers
+                .Add(tapEstablishment);
+
+            cuisineLabel
+                .GestureRecognizers
+                .Add(tapCuisine);
+
+            establishmentPicker
+                .SelectedIndexChanged += EstablishmentPicker_SelectedIndexChanged;
+        }
+
+        void EstablishmentPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (establishmentPicker.SelectedIndex != 0) 
+            {
+                establishmentSplit.IsVisible = false;
+                establishmentLabel.Text = establishmentPicker
+                    .SelectedItem
+                    .ToString();
+            }
+            else 
+            {
+                establishmentSplit.IsVisible = true;
+                establishmentLabel.Text = "любом";
+            }
         }
     }
 }

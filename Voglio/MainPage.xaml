@@ -56,10 +56,6 @@
             </Picker.SelectedIndex>
         </Picker>
         
-        <TimePicker
-            x:Name="timePicker"
-            IsVisible="false"/>
-        
         <Label
             Text="Voglio"
             Font="30"
@@ -81,7 +77,7 @@
                 
                 <Label 
                     x:Name="establishmentLabel"
-                    Text="{Binding Source={x:Reference establishmentPicker}, Path=SelectedItem}"/>
+                    Text="любом"/>
                 
             </StackLayout>
         
@@ -90,17 +86,16 @@
                 HorizontalOptions="CenterAndExpand">
                 
                 <Label 
+                    x:Name="establishmentSplit"
+                    IsVisible="true"
+                    Text="заведении"/>
+                
+                <Label 
                     x:Name="cuisineLabel"
                     Text="{Binding Source={x:Reference cuisinePicker}, Path=SelectedItem}"/>
                 
                 <Label 
                     Text="кухни"/>
-                
-                <Label 
-                    x:Name="timeLabel"
-                    IsEnabled="false"
-                    IsVisible="false"
-                    Text="{Binding Source={x:Reference timePicker}, Path=Time}"/>
                 
             </StackLayout>
             
