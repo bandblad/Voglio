@@ -6,6 +6,23 @@
     x:Name="contentPage">
     
     <ContentPage.Content>
-        
+         <StackLayout>
+            <Frame 
+                Padding="0"
+                Margin="0"
+                CornerRadius="30"
+                BorderColor="Fuchsia"
+                IsClippedToBounds="true"
+                HeightRequest="150"
+                WidthRequest="150"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+            
+            <Image 
+                Source="pic.jpg"
+                Aspect="AspectFill"/>
+            
+        </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -157,4 +157,7 @@
       <Name>Voglio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pic.jpg" />
+  </ItemGroup>
 </Project>
