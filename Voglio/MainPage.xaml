@@ -4,11 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:Voglio" 
     x:Class="Voglio.MainPage"
-    x:Name="contentPage">
+    x:Name="contentPage"
+    BackgroundColor="Black">
     
     <StackLayout
         BackgroundColor="Red"
-        Padding="0,40">
+        Padding="0,40"
+        x:Name="mainLayout">
         
         <StackLayout.Resources>
             <Style 
@@ -92,10 +94,7 @@
                 
                 <Label 
                     x:Name="cuisineLabel"
-                    Text="{Binding Source={x:Reference cuisinePicker}, Path=SelectedItem}"/>
-                
-                <Label 
-                    Text="кухни"/>
+                    Text="любой кухни"/>
                 
             </StackLayout>
             
